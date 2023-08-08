@@ -76,16 +76,9 @@ h1 {
 }
 
 .again {
-<<<<<<< HEAD
-  height: 45px;
-  top: 4rem;
-  left: 3rem;
-  position: absolute;
-=======
   position: absolute;
   top: 2rem;
   left: 3rem;
->>>>>>> 5ed9453ff6d77fc8d2e5105c566ef069dd51ba9f
 }
 
 .number-input {
