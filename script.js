@@ -1,10 +1,8 @@
 'use strict'
-
-//document.querySelector('.guess-message').textContent = 'Правильно!';
 document.querySelector('.number-input').value = 10;
-
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
+let highScore = 0;
 document.querySelector('.check').addEventListener('click', function () {
     const guesNumber = Number(document.querySelector('.number-input').value)
     console.log(typeof guesNumber);
@@ -15,6 +13,12 @@ document.querySelector('.check').addEventListener('click', function () {
         document.querySelector('.question').textContent = secretNumber;
         document.querySelector('body').style.backgroundColor = 'rgb(9, 250, 21)';
         document.querySelector('.question').style.width = '50rem';
+
+        if (score > highScore) {
+            highScore = score;
+            document.querySelector('.highscore').textContent = highScore;
+        }
+
     } else if (guesNumber > secretNumber) {
         if (score > 1) {
             document.querySelector('.guess-message').textContent = 'Слишком много!';
@@ -30,7 +34,7 @@ document.querySelector('.check').addEventListener('click', function () {
             document.querySelector('.score').textContent = score;
         } else {
             document.querySelector('.guess-message').textContent = 'Игра закончен!';
-            document.querySelector('.score').textContent = 0;
+            document.querySelector('.score').textContent = '0';
         }
     }
 });
